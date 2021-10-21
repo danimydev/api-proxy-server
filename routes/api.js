@@ -24,4 +24,12 @@ router.get('/', cache('2 minutes'), async (req, res) => {
     }
 })
 
+router.get('/help', (req, res) => {
+    res.status(200).json({
+        msg: 'OK',
+        hint: 'Trying adding query params! this implements open weather api',
+        example: '?q=Boston'
+    })
+})
+
 module.exports = router
